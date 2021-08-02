@@ -34,7 +34,7 @@ void process_image_callback(const sensor_msgs::Image img)
     int step_num = -1;
     for (int pixel_num = 0; pixel_num < img.height * img.step; pixel_num+=3)
     {
-       if (img.data[pixel_num]== white_pixel )
+       if (img.data[pixel_num]== white_pixel && img.data[pixel_num + 1]== white_pixel && img.data[pixel_num + 2]== white_pixel)
        {    
         
             step_num = pixel_num % img.step;
